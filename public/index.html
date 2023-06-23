@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Front-end</title>
-
- 
-
+  <title>LordeDosUsados</title>
   <style>
+    h2{ text-align: center;  font-family:'Courier New';color: darkcyan; background-image: url('./bandeira.jpg'); width: 500px; margin-left: 400px;border-style:solid}
+    
+    body{background-image: url('./35_volvos60.jpg'); background-repeat: no-repeat; background-size: 1380px;}
+    
+    div{text-align: center; margin-bottom: 10px;}
     
     .text-container {
-      margin-bottom: 20px;
-    
+      margin-bottom: 10px;
     }
 
     .text {
@@ -21,7 +22,7 @@
       color: red;
       margin-right: 5px;
       cursor: pointer;
-    }
+        }
 
     .edit-button {
       color: blue;
@@ -31,27 +32,27 @@
 </head>
 <body>
   <div>
-    <h2>carros usados</h2>
+    <h2>LordeDosUsados</h2>
     <div>
-      <label for="text-input">Digite um texto:</label>
-      <input type="text" id="text-input">
+      <label for="text-input">Digite um Modelo:</label>
+      <input type="text" id="text-input" placeholder="*Caso Fora das Opções">
       <button onclick="addText()">Adicionar</button>
     </div>
     <div>
-      <label for="select1">Selecione uma opção:</label>
+      <label for="select1">Selecione uma Marca:</label>
       <select id="select1" onchange="populateSelect2()">
-        <option value="VolksWagen">VolksWagen</option>
-        <option value="chevrolet">chevrolet</option>
-        <option value="Renoult">Renoult</option>
+        <option value="opcao1">Alfa Romeo</option>
+        <option value="opcao2">Opel</option>
+        <option value="opcao3">Volvo</option>
       </select>
     </div>
     <div>
-      <label for="select2">Selecione outra opção:</label>
+      <label for="select2">Selecione o Modelo:</label>
       <select id="select2">
       </select>
     </div>
     <div id="text-container">
-     
+      <!-- Textos adicionados aparecerão aqui -->
     </div>
   </div>
 
@@ -98,39 +99,39 @@
       var select2 = document.getElementById("select2");
       var selectedOption = select1.options[select1.selectedIndex].value;
 
-      
+      // Limpar as opções atuais
       select2.innerHTML = "";
 
-      
-      if (selectedOption === "VolksWagen") {
+      // Adicionar opções ao segundo select de acordo com o valor selecionado no primeiro select
+      if (selectedOption === "opcao1") {
         var option1 = document.createElement("option");
-        option1.value = "gol";
-        option1.innerText = "jetta";
+        option1.value = "subopcao1";
+        option1.innerText = "Giulia";
         select2.appendChild(option1);
 
         var option2 = document.createElement("option");
-        option2.value = "gol";
-        option2.innerText = "gol ";
+        option2.value = "subopcao2";
+        option2.innerText = "Stelvio";
         select2.appendChild(option2);
-      } else if (selectedOption === "chevrolet") {
+      } else if (selectedOption === "opcao2") {
         var option3 = document.createElement("option");
-        option3.value = "omega";
-        option3.innerText = "onix";
+        option3.value = "subopcao3";
+        option3.innerText = "Astra";
         select2.appendChild(option3);
 
         var option4 = document.createElement("option");
-        option4.value = "onix";
-        option4.innerText = "omega";
+        option4.value = "subopcao4";
+        option4.innerText = "Corsa";
         select2.appendChild(option4);
-      } else if (selectedOption === "Renault") {
+      } else if (selectedOption === "opcao3") {
         var option5 = document.createElement("option");
-        option5.value = "kwid";
-        option5.innerText = "kwid";
+        option5.value = "subopcao5";
+        option5.innerText = "S60";
         select2.appendChild(option5);
 
         var option6 = document.createElement("option");
-        option6.value = "kwid";
-        option6.innerText = "logan";
+        option6.value = "subopcao6";
+        option6.innerText = "V40";
         select2.appendChild(option6);
       }
     }
